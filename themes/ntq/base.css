@@ -1,1 +1,207 @@
-Test
+/*
+ * NTQ Theme
+ * base.css
+ */
+
+/* -------------------------------------------------
+   RESET
+-------------------------------------------------- */
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* -------------------------------------------------
+   ROOT
+-------------------------------------------------- */
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+html,
+body {
+
+    width: 100%;
+    min-height: 100%;
+
+}
+
+/* -------------------------------------------------
+   BODY
+-------------------------------------------------- */
+
+body {
+
+    background: var(--bg);
+    color: var(--text);
+
+    font-family: var(--font-ui);
+    font-size: var(--fs-base);
+    line-height: 1.6;
+
+    transition:
+        background var(--duration-normal),
+        color var(--duration-normal);
+
+    overflow-x: hidden;
+
+}
+
+/* -------------------------------------------------
+   NTQ GRID
+-------------------------------------------------- */
+
+body::before {
+
+    content: "";
+
+    position: fixed;
+    inset: 0;
+
+    background-image:
+
+        linear-gradient(
+            rgba(123,111,255,var(--grid-opacity))
+            1px,
+            transparent 1px
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(123,111,255,var(--grid-opacity))
+            1px,
+            transparent 1px
+        );
+
+    background-size:
+
+        var(--grid-size)
+        var(--grid-size);
+
+    pointer-events: none;
+
+    z-index: var(--z-background);
+
+}
+
+/* -------------------------------------------------
+   TYPOGRAPHY
+-------------------------------------------------- */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+
+    font-family: var(--font-serif);
+    font-weight: 300;
+
+    color: var(--text);
+
+}
+
+p {
+
+    margin-bottom: var(--space-4);
+
+}
+
+small {
+
+    color: var(--text-dim);
+
+}
+
+/* -------------------------------------------------
+   LINKS
+-------------------------------------------------- */
+
+a {
+
+    color: var(--accent);
+    text-decoration: none;
+
+    transition: color var(--duration-fast);
+
+}
+
+a:hover {
+
+    color: var(--accent-3);
+
+}
+
+/* -------------------------------------------------
+   CODE
+-------------------------------------------------- */
+
+code,
+pre {
+
+    font-family: var(--font-mono);
+
+}
+
+pre {
+
+    background: var(--surface-2);
+
+    border: var(--border-default);
+
+    border-radius: var(--radius-sm);
+
+    padding: var(--space-3);
+
+    overflow-x: auto;
+
+}
+
+/* -------------------------------------------------
+   SELECTION
+-------------------------------------------------- */
+
+::selection {
+
+    background: var(--accent);
+    color: white;
+
+}
+
+/* -------------------------------------------------
+   SCROLLBAR
+-------------------------------------------------- */
+
+::-webkit-scrollbar {
+
+    width: 5px;
+    height: 5px;
+
+}
+
+::-webkit-scrollbar-track {
+
+    background: transparent;
+
+}
+
+::-webkit-scrollbar-thumb {
+
+    background: var(--border);
+
+    border-radius: var(--radius-round);
+
+}
+
+::-webkit-scrollbar-thumb:hover {
+
+    background: var(--border-light);
+
+}
