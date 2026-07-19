@@ -1,1 +1,28 @@
-Test
+/*
+ * NTQ Theme
+ * theme-light.css
+ */
+
+body.theme-light {
+
+    --bg:              #f7f8fb;
+
+    --surface:         #ffffff;
+    --surface-2:       #f1f3f8;
+    --surface-3:       #e8ebf3;
+
+    --border:          #d9dce5;
+    --border-light:    #c9ccd6;
+
+    --text:            #1b1d24;
+    --text-dim:        #5e6472;
+    --text-muted:      #8c92a1;
+
+    --accent:          #635bff;
+    --accent-2:        #e35d5d;
+    --accent-3:        #2cbf7b;
+    --accent-4:        #d9922d;
+
+    --grid-opacity:    .05;
+
+}
