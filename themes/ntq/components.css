@@ -1,1 +1,322 @@
-Test
+/*
+ * NTQ Theme
+ * components.css
+ */
+
+/* =====================================================
+   BUTTONS
+===================================================== */
+
+.ntq-btn{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:var(--space-2);
+
+    padding:8px 14px;
+
+    border:none;
+
+    border-radius:var(--radius-sm);
+
+    background:var(--accent);
+
+    color:white;
+
+    font-family:var(--font-ui);
+
+    font-size:var(--fs-sm);
+
+    letter-spacing:1px;
+
+    cursor:pointer;
+
+    transition:all var(--duration-fast);
+
+}
+
+.ntq-btn:hover{
+
+    transform:translateY(-1px);
+
+    background:#9a8fff;
+
+}
+
+.ntq-btn.secondary{
+
+    background:transparent;
+
+    color:var(--text-dim);
+
+    border:var(--border-default);
+
+}
+
+.ntq-btn.secondary:hover{
+
+    border-color:var(--accent);
+
+    color:var(--accent);
+
+    background:transparent;
+
+}
+
+.ntq-btn.success{
+
+    background:var(--accent-3);
+
+    color:var(--bg);
+
+}
+
+.ntq-btn.success:hover{
+
+    background:#8fffce;
+
+}
+
+.ntq-btn.danger{
+
+    background:var(--accent-2);
+
+}
+
+.ntq-btn.warning{
+
+    background:var(--accent-4);
+
+    color:var(--bg);
+
+}
+
+/* =====================================================
+   INPUTS
+===================================================== */
+
+.ntq-input,
+.ntq-textarea,
+.ntq-select{
+
+    width:100%;
+
+    padding:8px 12px;
+
+    background:var(--surface-2);
+
+    border:var(--border-default);
+
+    border-radius:var(--radius-sm);
+
+    color:var(--text);
+
+    font-family:var(--font-ui);
+
+    font-size:12px;
+
+    outline:none;
+
+    transition:border-color var(--duration-fast);
+
+}
+
+.ntq-input:focus,
+.ntq-textarea:focus,
+.ntq-select:focus{
+
+    border-color:var(--accent);
+
+}
+
+.ntq-textarea{
+
+    resize:vertical;
+
+}
+
+/* =====================================================
+   CARD
+===================================================== */
+
+.ntq-card{
+
+    background:var(--surface-2);
+
+    border:var(--border-default);
+
+    border-radius:var(--radius-md);
+
+    padding:var(--space-4);
+
+}
+
+/* =====================================================
+   BADGE
+===================================================== */
+
+.ntq-badge{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:2px 8px;
+
+    border-radius:var(--radius-round);
+
+    background:var(--surface-2);
+
+    color:var(--text-dim);
+
+    font-size:10px;
+
+    letter-spacing:1px;
+
+    text-transform:uppercase;
+
+}
+
+.ntq-badge.success{
+
+    color:var(--accent-3);
+
+}
+
+.ntq-badge.warning{
+
+    color:var(--accent-4);
+
+}
+
+.ntq-badge.danger{
+
+    color:var(--accent-2);
+
+}
+
+/* =====================================================
+   STATUS DOT
+===================================================== */
+
+.ntq-dot{
+
+    width:8px;
+
+    height:8px;
+
+    border-radius:50%;
+
+}
+
+.ntq-dot.success{
+
+    background:var(--stable);
+
+    box-shadow:var(--glow-success);
+
+}
+
+.ntq-dot.warning{
+
+    background:var(--warning);
+
+}
+
+.ntq-dot.danger{
+
+    background:var(--unstable);
+
+    box-shadow:var(--glow-danger);
+
+}
+
+/* =====================================================
+   LOG
+===================================================== */
+
+.ntq-log{
+
+    background:var(--surface-2);
+
+    border-radius:var(--radius-sm);
+
+    padding:12px;
+
+    font-size:11px;
+
+    line-height:1.8;
+
+    color:var(--text-dim);
+
+}
+
+.ntq-log-entry{
+
+    margin-bottom:4px;
+
+}
+
+.ntq-log-entry.success{
+
+    color:var(--accent-3);
+
+}
+
+.ntq-log-entry.warning{
+
+    color:var(--accent-4);
+
+}
+
+.ntq-log-entry.error{
+
+    color:var(--accent-2);
+
+}
+
+.ntq-log-entry.info{
+
+    color:var(--accent);
+
+}
+
+/* =====================================================
+   CODE
+===================================================== */
+
+.ntq-code{
+
+    background:var(--surface-2);
+
+    border:var(--border-default);
+
+    border-radius:var(--radius-sm);
+
+    padding:12px;
+
+    font-family:var(--font-mono);
+
+    overflow-x:auto;
+
+}
+
+/* =====================================================
+   DIVIDER
+===================================================== */
+
+.ntq-divider{
+
+    border:none;
+
+    border-top:var(--border-default);
+
+    margin:var(--space-4) 0;
+
+}
