@@ -1,1 +1,27 @@
-Test
+/*
+ * NTQ Theme
+ * theme-dark.css
+ *
+ * Default NTQ Theme
+ */
+
+:root {
+
+    --bg:              #0a0a0f;
+    --surface:         #111118;
+    --surface-2:       #1a1a24;
+    --surface-3:       #222230;
+
+    --border:          #2a2a3a;
+    --border-light:    #3a3a4f;
+
+    --text:            #e8e8f0;
+    --text-dim:        #8b8ba8;
+    --text-muted:      #666680;
+
+    --accent:          #7b6fff;
+    --accent-2:        #ff6b6b;
+    --accent-3:        #6bffb8;
+    --accent-4:        #ffb86b;
+
+}
