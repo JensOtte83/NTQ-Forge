@@ -1,1 +1,305 @@
-Test
+/*
+ * NTQ Theme
+ * layout.css
+ */
+
+/* -------------------------------------------------
+   APP
+-------------------------------------------------- */
+
+.ntq-app {
+
+    position: relative;
+
+    z-index: var(--z-content);
+
+    max-width: var(--content-width);
+
+    margin: 0 auto;
+
+    padding: var(--space-8) var(--space-6);
+
+}
+
+/* -------------------------------------------------
+   HEADER
+-------------------------------------------------- */
+
+.ntq-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-start;
+
+    gap: var(--space-6);
+
+    margin-bottom: var(--space-8);
+
+    padding-bottom: var(--space-6);
+
+    border-bottom: var(--border-default);
+
+}
+
+.ntq-header-left {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: var(--space-1);
+
+}
+
+.ntq-header-right {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-end;
+
+    gap: var(--space-2);
+
+}
+
+/* -------------------------------------------------
+   LOGO
+-------------------------------------------------- */
+
+.ntq-logo {
+
+    font-family: var(--font-serif);
+
+    font-size: var(--fs-xxl);
+
+    font-weight: 300;
+
+    line-height: 1;
+
+    letter-spacing: -1px;
+
+}
+
+.ntq-logo span {
+
+    color: var(--accent);
+
+}
+
+.ntq-subtitle {
+
+    font-size: var(--fs-sm);
+
+    color: var(--text-dim);
+
+    text-transform: uppercase;
+
+    letter-spacing: 2px;
+
+}
+
+/* -------------------------------------------------
+   GRID
+-------------------------------------------------- */
+
+.ntq-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(2,1fr);
+
+    gap: var(--space-5);
+
+}
+
+.ntq-grid-3 {
+
+    display: grid;
+
+    grid-template-columns: repeat(3,1fr);
+
+    gap: var(--space-5);
+
+}
+
+/* -------------------------------------------------
+   FLEX
+-------------------------------------------------- */
+
+.ntq-row {
+
+    display:flex;
+
+    align-items:center;
+
+    gap:var(--space-2);
+
+}
+
+.ntq-column {
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:var(--space-2);
+
+}
+
+/* -------------------------------------------------
+   PANEL
+-------------------------------------------------- */
+
+.ntq-panel {
+
+    position: relative;
+
+    overflow: hidden;
+
+    background: var(--surface);
+
+    border: var(--border-default);
+
+    border-radius: var(--radius-lg);
+
+    padding: var(--space-5);
+
+}
+
+.ntq-panel::before {
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:0;
+
+    right:0;
+
+    height:2px;
+
+    background:linear-gradient(
+        90deg,
+        var(--accent),
+        transparent
+    );
+
+}
+
+.ntq-panel.success::before {
+
+    background:linear-gradient(
+        90deg,
+        var(--accent-3),
+        transparent
+    );
+
+}
+
+.ntq-panel.warning::before {
+
+    background:linear-gradient(
+        90deg,
+        var(--accent-4),
+        transparent
+    );
+
+}
+
+.ntq-panel.danger::before {
+
+    background:linear-gradient(
+        90deg,
+        var(--accent-2),
+        transparent
+    );
+
+}
+
+/* -------------------------------------------------
+   PANEL TITLE
+-------------------------------------------------- */
+
+.ntq-panel-title {
+
+    display:flex;
+
+    align-items:center;
+
+    gap:var(--space-2);
+
+    margin-bottom:var(--space-4);
+
+    font-size:var(--fs-xs);
+
+    letter-spacing:3px;
+
+    text-transform:uppercase;
+
+    color:var(--text-dim);
+
+}
+
+.ntq-dot {
+
+    width:6px;
+
+    height:6px;
+
+    border-radius:50%;
+
+    background:var(--accent);
+
+}
+
+/* -------------------------------------------------
+   FORMULA BAR
+-------------------------------------------------- */
+
+.ntq-formula {
+
+    display:flex;
+
+    align-items:center;
+
+    gap:var(--space-6);
+
+    flex-wrap:wrap;
+
+    margin-bottom:var(--space-7);
+
+    padding:var(--space-4) var(--space-6);
+
+    border:var(--border-accent);
+
+    border-radius:var(--radius-lg);
+
+    background:var(--surface);
+
+}
+
+/* -------------------------------------------------
+   RESPONSIVE
+-------------------------------------------------- */
+
+@media (max-width:900px){
+
+    .ntq-grid,
+    .ntq-grid-3{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .ntq-header{
+
+        flex-direction:column;
+
+    }
+
+}
