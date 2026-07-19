@@ -1,1 +1,190 @@
-Test
+/*
+ * NTQ Theme
+ * animations.css
+ */
+
+/* =====================================================
+   FADE
+===================================================== */
+
+@keyframes ntq-fade-in {
+
+    from {
+
+        opacity:0;
+
+    }
+
+    to {
+
+        opacity:1;
+
+    }
+
+}
+
+.ntq-fade-in{
+
+    animation:ntq-fade-in var(--duration-normal) var(--ease);
+
+}
+
+/* =====================================================
+   SLIDE UP
+===================================================== */
+
+@keyframes ntq-slide-up{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+.ntq-slide-up{
+
+    animation:ntq-slide-up .35s var(--ease);
+
+}
+
+/* =====================================================
+   SCALE
+===================================================== */
+
+@keyframes ntq-scale{
+
+    from{
+
+        opacity:0;
+
+        transform:scale(.96);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:scale(1);
+
+    }
+
+}
+
+.ntq-scale{
+
+    animation:ntq-scale .25s var(--ease);
+
+}
+
+/* =====================================================
+   PULSE
+===================================================== */
+
+@keyframes ntq-pulse{
+
+    0%{
+
+        box-shadow:none;
+
+    }
+
+    50%{
+
+        box-shadow:var(--glow-accent);
+
+    }
+
+    100%{
+
+        box-shadow:none;
+
+    }
+
+}
+
+.ntq-pulse{
+
+    animation:ntq-pulse 2s infinite;
+
+}
+
+/* =====================================================
+   SPIN
+===================================================== */
+
+@keyframes ntq-spin{
+
+    from{
+
+        transform:rotate(0deg);
+
+    }
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+
+.ntq-spin{
+
+    animation:ntq-spin 1s linear infinite;
+
+}
+
+/* =====================================================
+   HOVER LIFT
+===================================================== */
+
+.ntq-hover{
+
+    transition:
+        transform var(--duration-fast),
+        box-shadow var(--duration-fast);
+
+}
+
+.ntq-hover:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:var(--shadow-md);
+
+}
+
+/* =====================================================
+   DISABLED
+===================================================== */
+
+.ntq-disabled{
+
+    opacity:.45;
+
+    pointer-events:none;
+
+}
+
+/* =====================================================
+   HIDDEN
+===================================================== */
+
+.ntq-hidden{
+
+    display:none !important;
+
+}
