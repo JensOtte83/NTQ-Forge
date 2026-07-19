@@ -1,11 +1,40 @@
+"""
+NTQ Forge
+
+Semantic document root.
+"""
+
+from dataclasses import dataclass, field
+
+
+@dataclass
 class Document:
 
-    def __init__(self):
+    title: str = ""
 
-        self.title = "Untitled"
+    author: str = ""
 
-        self.components = []
+    language: str = "en"
 
-    def add(self, component):
+    children: list = field(default_factory=list)
 
-        self.components.append(component)
+    metadata: dict = field(default_factory=dict)
+
+
+    def add(self, element):
+
+        self.children.append(element)
+
+        return element
+
+
+    def extend(self, elements):
+
+        self.children.extend(elements)
+
+        return self
+
+
+    def __iter__(self):
+
+        return iter(self.children)
