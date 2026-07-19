@@ -1,1 +1,100 @@
-Test
+/*
+ * NTQ Theme
+ * variables.css
+ * Shared Design Tokens
+ * Version: 0.1
+ */
+
+:root {
+
+    /* -------------------------------------------------
+       COLORS
+    -------------------------------------------------- */
+
+    --bg:              #0a0a0f;
+    --surface:         #111118;
+    --surface-2:       #1a1a24;
+    --surface-3:       #222230;
+
+    --border:          #2a2a3a;
+    --border-light:    #3a3a4f;
+
+    --accent:          #7b6fff;
+    --accent-2:        #ff6b6b;
+    --accent-3:        #6bffb8;
+    --accent-4:        #ffb86b;
+
+    --stable:          var(--accent-3);
+    --unstable:        var(--accent-2);
+    --warning:         var(--accent-4);
+
+    --text:            #e8e8f0;
+    --text-dim:        #7a7a9a;
+    --text-muted:      #5b5b76;
+    --text-dimmer:     #44445a;
+
+    --white:           #ffffff;
+    --black:           #000000;
+
+    /* -------------------------------------------------
+       TYPOGRAPHY
+    -------------------------------------------------- */
+
+    --font-mono:       "DM Mono", monospace;
+    --font-serif:      "Cormorant Garamond", serif;
+    --font-ui:         var(--font-mono);
+
+    --fs-xs:           10px;
+    --fs-sm:           11px;
+    --fs-md:           13px;
+    --fs-base:         15px;
+    --fs-lg:           18px;
+    --fs-xl:           24px;
+    --fs-xxl:          42px;
+
+    --fw-light:        300;
+    --fw-normal:       400;
+    --fw-medium:       500;
+    --fw-semibold:     600;
+
+    /* -------------------------------------------------
+       SPACING
+    -------------------------------------------------- */
+
+    --space-1:         4px;
+    --space-2:         8px;
+    --space-3:         12px;
+    --space-4:         16px;
+    --space-5:         20px;
+    --space-6:         24px;
+    --space-7:         32px;
+    --space-8:         40px;
+
+    /* -------------------------------------------------
+       BORDER RADIUS
+    -------------------------------------------------- */
+
+    --radius-sm:       4px;
+    --radius-md:       6px;
+    --radius-lg:       8px;
+    --radius-xl:       12px;
+    --radius-round:    999px;
+
+    /* -------------------------------------------------
+       SHADOWS
+    -------------------------------------------------- */
+
+    --shadow-sm:
+        0 1px 2px rgba(0,0,0,.20);
+
+    --shadow-md:
+        0 4px 10px rgba(0,0,0,.25);
+
+    --shadow-lg:
+        0 12px 28px rgba(0,0,0,.35);
+
+    --glow-accent:
+        0 0 10px rgba(123,111,255,.35);
+
+    --glow-success:
+        0 0 10px
