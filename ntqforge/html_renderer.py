@@ -9,7 +9,7 @@ class HTMLRenderer(Renderer):
 
         html += f"<h1>{document.title}</h1>\n"
 
-        for component in document.components:
+        for component in document:
 
             html += component.render(self)
 
