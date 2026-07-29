@@ -591,3 +591,15 @@
     border-radius:var(--radius-sm);
     color:var(--accent-3);
 }
+
+
+/* =====================================================
+   HORIZONTAL RULE
+===================================================== */
+
+.ntq-hr{
+    border:none;
+    height:1px;
+    background:var(--border);
+    margin:var(--space-6) 0;
+}
