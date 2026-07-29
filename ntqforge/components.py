@@ -405,3 +405,11 @@ class CodeBlock(Component):
             f'<pre class="ntq-code"{attr}><code>'
             f"{self.escape(self.code)}</code></pre>"
         )
+
+
+class Divider(Component):
+    """A horizontal rule (``.ntq-hr``). Emitted by the markdown importer
+    for ``---`` / ``***`` / ``___`` lines."""
+
+    def render(self, renderer):
+        return '<hr class="ntq-hr">'

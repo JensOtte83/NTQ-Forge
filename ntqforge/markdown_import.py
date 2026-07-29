@@ -23,7 +23,7 @@ import html
 import re
 
 from .document import Document
-from .components import Chapter, Text, Quote, BulletList, CodeBlock
+from .components import Chapter, Text, Quote, BulletList, CodeBlock, Divider
 
 
 # -- inline formatting ---------------------------------------------------
@@ -95,6 +95,14 @@ def from_markdown(text, title=None, numbered=False, **metadata):
                 i += 1
             i += 1  # skip closing fence
             add_block(CodeBlock("\n".join(code_lines), language=lang))
+            continue
+
+        # horizontal rule (---, ***, ___, also spaced) — before lists,
+        # so "- - -" is a rule, not a list item.
+        compact = line.strip().replace(" ", "")
+        if len(compact) >= 3 and len(set(compact)) == 1 and compact[0] in "-*_":
+            add_block(Divider())
+            i += 1
             continue
 
         # heading

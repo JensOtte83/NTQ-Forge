@@ -174,28 +174,52 @@ def relation_diagram(left="ε", right="Δ", left_label=None, right_label=None,
     return d.svg()
 
 
-def flow_diagram(steps, width=640, box_h=52):
-    """A horizontal flow of labelled boxes joined by arrows.
+def flow_diagram(steps, width=640, box_h=52, direction="horizontal"):
+    """A flow of labelled boxes joined by arrows.
 
-    ``steps`` is a list of labels, or ``(label, color)`` tuples. Example::
+    ``steps`` is a list of labels, or ``(label, color)`` tuples.
+    ``direction`` is ``"horizontal"`` (default) or ``"vertical"``.
 
         flow_diagram(["Objekt", "Renderer", "HTML"])
+        flow_diagram(["Input", "Δ", "Output"], direction="vertical")
     """
     palette = [ACCENT, ACCENT_3, ACCENT_4, ACCENT_2]
     n = len(steps)
+
+    def resolve(idx, step):
+        if isinstance(step, (tuple, list)):
+            return step[0], step[1]
+        return step, palette[idx % len(palette)]
+
+    if direction == "vertical":
+        gap = 30
+        box_w = min(width * 0.62, 320)
+        cx = width / 2
+        height = n * box_h + (n - 1) * gap + 20
+        d = Diagram(width, height)
+        d.define(_arrowhead("ntq-flow-head", TEXT_DIM, "auto"))
+        y = 10
+        for idx, step in enumerate(steps):
+            label, color = resolve(idx, step)
+            d.rect(cx - box_w / 2, y, box_w, box_h, stroke=color,
+                   fill=SURFACE_2, rx=8, width=1.5)
+            d.text(cx, y + box_h / 2, label, fill=TEXT, size=13, family=_MONO)
+            if idx < n - 1:
+                d.line(cx, y + box_h + 3, cx, y + box_h + gap - 3,
+                       stroke=TEXT_DIM, width=1.5, marker_end="ntq-flow-head")
+            y += box_h + gap
+        return d.svg()
+
+    # horizontal (default)
     height = box_h + 48
     cy = height / 2
     d = Diagram(width, height)
     d.define(_arrowhead("ntq-flow-head", TEXT_DIM, "auto"))
-
     gap = 34
     box_w = (width - gap * (n - 1)) / n
     x = 0
     for idx, step in enumerate(steps):
-        if isinstance(step, (tuple, list)):
-            label, color = step[0], step[1]
-        else:
-            label, color = step, palette[idx % len(palette)]
+        label, color = resolve(idx, step)
         y = cy - box_h / 2
         d.rect(x, y, box_w, box_h, stroke=color, fill=SURFACE_2, rx=8, width=1.5)
         d.text(x + box_w / 2, cy, label, fill=TEXT, size=13, family=_MONO)

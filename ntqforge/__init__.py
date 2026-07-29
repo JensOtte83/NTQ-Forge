@@ -31,6 +31,7 @@ from .components import (
     Quote,
     BulletList,
     CodeBlock,
+    Divider,
 )
 from .markdown_import import from_markdown
 from .diagram import Diagram, relation_diagram, flow_diagram
@@ -57,6 +58,7 @@ __all__ = [
     "Quote",
     "BulletList",
     "CodeBlock",
+    "Divider",
     "from_markdown",
     "Diagram",
     "relation_diagram",
