@@ -328,79 +328,48 @@
 ===================================================== */
 
 .ntq-formula-label{
-
     font-size:var(--fs-sm);
-
     color:var(--text-dim);
-
     letter-spacing:2px;
-
     text-transform:uppercase;
-
 }
 
 .ntq-formula-eq{
-
     font-family:var(--font-serif);
-
     font-size:var(--fs-xl);
-
     font-style:italic;
-
     color:var(--accent);
-
 }
 
 .ntq-formula-expand{
-
     font-size:var(--fs-sm);
-
     color:var(--text-dim);
-
 }
 
 .ntq-formula-values{
-
     margin-left:auto;
-
     display:flex;
-
     gap:var(--space-6);
-
 }
 
 .ntq-fval{
-
     display:flex;
-
     flex-direction:column;
-
     align-items:center;
-
     gap:2px;
-
 }
 
 .ntq-fval-num{
-
     font-family:var(--font-serif);
-
     font-size:var(--fs-lg);
-
     font-weight:var(--fw-medium);
-
     color:var(--accent-3);
-
 }
 
 .ntq-fval-label{
-
     font-size:var(--fs-xs);
-
     color:var(--text-dimmer);
-
     letter-spacing:1px;
-
 }
 
 /* =====================================================
@@ -408,27 +377,153 @@
 ===================================================== */
 
 .ntq-heading{
-
     font-family:var(--font-serif);
-
     font-weight:var(--fw-light);
-
     color:var(--text);
-
     margin-bottom:var(--space-3);
-
     letter-spacing:-.5px;
-
 }
 
 .ntq-text{
-
     color:var(--text-dim);
-
     font-size:var(--fs-md);
-
     line-height:1.7;
-
     margin-bottom:var(--space-3);
+}
 
+/* =====================================================
+   CHAPTER
+===================================================== */
+
+.ntq-chapter{
+    margin-bottom:var(--space-8);
+}
+
+.ntq-chapter-title{
+    font-family:var(--font-serif);
+    font-weight:var(--fw-light);
+    color:var(--text);
+    letter-spacing:-.5px;
+    padding-bottom:var(--space-2);
+    margin-bottom:var(--space-4);
+    border-bottom:var(--border-default);
+}
+
+.ntq-chapter-title .ntq-num{
+    color:var(--accent);
+    font-style:italic;
+    margin-right:var(--space-2);
+}
+
+.ntq-chapter .ntq-chapter{
+    margin-top:var(--space-5);
+    margin-bottom:var(--space-5);
+}
+
+/* nested chapters get progressively smaller headings */
+.ntq-chapter-title.level-1{ font-size:var(--fs-xxl); }
+.ntq-chapter-title.level-2{ font-size:var(--fs-xl); }
+.ntq-chapter-title.level-3{ font-size:var(--fs-lg); }
+.ntq-chapter-title.level-4,
+.ntq-chapter-title.level-5,
+.ntq-chapter-title.level-6{ font-size:var(--fs-base); }
+
+/* =====================================================
+   FIGURE
+===================================================== */
+
+.ntq-figure{
+    margin:var(--space-6) 0;
+    padding:var(--space-4);
+    background:var(--surface-2);
+    border:var(--border-default);
+    border-radius:var(--radius-md);
+    text-align:center;
+}
+
+.ntq-figure-img,
+.ntq-figure svg{
+    max-width:100%;
+    height:auto;
+    border-radius:var(--radius-sm);
+}
+
+.ntq-figcaption{
+    margin-top:var(--space-3);
+    font-size:var(--fs-sm);
+    color:var(--text-dim);
+    line-height:1.6;
+    text-align:center;
+}
+
+.ntq-figcaption .ntq-num{
+    color:var(--accent-3);
+    font-family:var(--font-serif);
+    font-style:italic;
+    font-size:var(--fs-md);
+    margin-right:6px;
+}
+
+/* =====================================================
+   TABLE
+===================================================== */
+
+.ntq-table-wrap{
+    margin:var(--space-6) 0;
+    overflow-x:auto;
+}
+
+.ntq-table{
+    width:100%;
+    border-collapse:collapse;
+    font-size:var(--fs-md);
+    background:var(--surface-2);
+    border:var(--border-default);
+    border-radius:var(--radius-md);
+    overflow:hidden;
+}
+
+.ntq-table caption{
+    caption-side:top;
+    text-align:left;
+    padding:var(--space-2) var(--space-3);
+    font-size:var(--fs-sm);
+    color:var(--text-dim);
+}
+
+.ntq-table caption .ntq-num{
+    color:var(--accent-4);
+    font-family:var(--font-serif);
+    font-style:italic;
+    font-size:var(--fs-md);
+    margin-right:6px;
+}
+
+.ntq-table th,
+.ntq-table td{
+    padding:10px 14px;
+    text-align:left;
+    border-bottom:var(--border-default);
+}
+
+.ntq-table thead th{
+    background:var(--surface-3);
+    color:var(--text);
+    font-weight:var(--fw-medium);
+    letter-spacing:1px;
+    text-transform:uppercase;
+    font-size:var(--fs-sm);
+}
+
+.ntq-table tbody td{
+    color:var(--text-dim);
+}
+
+.ntq-table tbody tr:last-child td{
+    border-bottom:none;
+}
+
+.ntq-table tbody tr:hover td{
+    background:rgba(123,111,255,.06);
+    color:var(--text);
 }
