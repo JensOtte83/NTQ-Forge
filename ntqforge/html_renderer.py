@@ -20,6 +20,7 @@ title to highlight, PRM-style, e.g. "R" in "PRM").
 
 from .renderer import Renderer
 from .theme import Theme
+from .numbering import assign_numbers
 
 
 class HTMLRenderer(Renderer):
@@ -33,6 +34,8 @@ class HTMLRenderer(Renderer):
     # -- public -------------------------------------------------------
 
     def render(self, document):
+        # Assign automatic numbers (chapters, figures, tables) before render.
+        assign_numbers(document)
         lang = getattr(document, "language", None) or self.lang
         css = self.theme.inline_css(embed_fonts=self.embed_fonts)
         title = getattr(document, "title", "") or ""

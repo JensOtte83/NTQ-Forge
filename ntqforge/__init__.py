@@ -25,6 +25,9 @@ from .components import (
     Raw,
     Badge,
     Log,
+    Chapter,
+    Figure,
+    Table,
 )
 
 __version__ = "0.1.0"
@@ -43,5 +46,8 @@ __all__ = [
     "Raw",
     "Badge",
     "Log",
+    "Chapter",
+    "Figure",
+    "Table",
     "__version__",
 ]
