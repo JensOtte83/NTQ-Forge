@@ -129,14 +129,20 @@ class Heading(Component):
 
 
 class Text(Component):
-    """A paragraph of escaped text (``.ntq-text``)."""
+    """A paragraph (``.ntq-text``).
 
-    def __init__(self, text):
+    By default the text is HTML-escaped. Pass ``raw=True`` to emit already
+    inline-formatted HTML (used by the markdown importer).
+    """
+
+    def __init__(self, text, raw=False):
         super().__init__()
         self.text = text
+        self.raw = raw
 
     def render(self, renderer):
-        return f'<p class="ntq-text">{self.escape(self.text)}</p>'
+        content = str(self.text) if self.raw else self.escape(self.text)
+        return f'<p class="ntq-text">{content}</p>'
 
 
 class Badge(Component):
@@ -338,3 +344,64 @@ class Table(_Numbered):
 
         parts.append("</table>")
         return f'<div class="ntq-table-wrap">\n{"".join(parts)}\n</div>'
+
+
+# =====================================================================
+# Prose blocks (used by structured content and the markdown importer)
+# =====================================================================
+
+
+class Quote(Component):
+    """A blockquote (``.ntq-quote``). ``raw=True`` skips escaping."""
+
+    def __init__(self, text, raw=False):
+        super().__init__()
+        self.text = text
+        self.raw = raw
+
+    def render(self, renderer):
+        content = str(self.text) if self.raw else self.escape(self.text)
+        return f'<blockquote class="ntq-quote">{content}</blockquote>'
+
+
+class BulletList(Component):
+    """An unordered (or ordered) list (``.ntq-list``).
+
+    ``items`` is a list of strings. ``ordered=True`` renders ``<ol>``.
+    ``raw=True`` emits the items as already inline-formatted HTML.
+    """
+
+    def __init__(self, items=None, ordered=False, raw=False):
+        super().__init__()
+        self.items = list(items or [])
+        self.ordered = ordered
+        self.raw = raw
+
+    def render(self, renderer):
+        tag = "ol" if self.ordered else "ul"
+        lis = []
+        for item in self.items:
+            content = str(item) if self.raw else self.escape(item)
+            lis.append(f"<li>{content}</li>")
+        return f'<{tag} class="ntq-list">{"".join(lis)}</{tag}>'
+
+
+class CodeBlock(Component):
+    """A fenced code block (``.ntq-code`` on a ``<pre>``). Always escaped.
+
+    ``language`` is stored (as a ``data-lang`` hint) but not highlighted.
+    """
+
+    def __init__(self, code, language=None):
+        super().__init__()
+        self.code = code
+        self.language = language
+
+    def render(self, renderer):
+        attr = (
+            f' data-lang="{self.escape(self.language)}"' if self.language else ""
+        )
+        return (
+            f'<pre class="ntq-code"{attr}><code>'
+            f"{self.escape(self.code)}</code></pre>"
+        )

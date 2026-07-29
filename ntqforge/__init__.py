@@ -28,7 +28,11 @@ from .components import (
     Chapter,
     Figure,
     Table,
+    Quote,
+    BulletList,
+    CodeBlock,
 )
+from .markdown_import import from_markdown
 
 __version__ = "0.1.0"
 
@@ -49,5 +53,9 @@ __all__ = [
     "Chapter",
     "Figure",
     "Table",
+    "Quote",
+    "BulletList",
+    "CodeBlock",
+    "from_markdown",
     "__version__",
 ]
