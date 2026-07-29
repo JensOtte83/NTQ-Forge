@@ -33,6 +33,7 @@ from .components import (
     CodeBlock,
 )
 from .markdown_import import from_markdown
+from .diagram import Diagram, relation_diagram, flow_diagram
 
 __version__ = "0.1.0"
 
@@ -57,5 +58,8 @@ __all__ = [
     "BulletList",
     "CodeBlock",
     "from_markdown",
+    "Diagram",
+    "relation_diagram",
+    "flow_diagram",
     "__version__",
 ]
