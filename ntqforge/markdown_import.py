@@ -54,7 +54,7 @@ def inline(text):
 # -- block parsing -------------------------------------------------------
 
 _HEADING = re.compile(r"^(#{1,6})\s+(.*)$")
-_ULIST = re.compile(r"^[-*+]\s+(.*)$")
+_ULIST = re.compile(r"^[-*+•·]\s+(.*)$")
 _OLIST = re.compile(r"^\d+[.)]\s+(.*)$")
 _QUOTE = re.compile(r"^>\s?(.*)$")
 _FENCE = re.compile(r"^```(.*)$")
@@ -147,7 +147,9 @@ def from_markdown(text, title=None, numbered=False, **metadata):
             add_block(BulletList(items, ordered=True, raw=True))
             continue
 
-        # paragraph (consecutive non-blank, non-special lines)
+        # paragraph (consecutive non-blank, non-special lines).
+        # Hard line breaks are preserved (joined with <br>), so
+        # hand-authored line structure (e.g. definition blocks) survives.
         para_lines = []
         while i < n and lines[i].strip() and not (
             _HEADING.match(lines[i]) or _ULIST.match(lines[i])
@@ -156,7 +158,7 @@ def from_markdown(text, title=None, numbered=False, **metadata):
         ):
             para_lines.append(lines[i].strip())
             i += 1
-        add_block(Text(inline(" ".join(para_lines)), raw=True))
+        add_block(Text("<br>".join(inline(l) for l in para_lines), raw=True))
 
     if title is not None and not doc.title:
         doc.title = title
