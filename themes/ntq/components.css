@@ -320,3 +320,115 @@
     margin:var(--space-4) 0;
 
 }
+
+/* =====================================================
+   FORMULA BAR — inner elements
+   (ported from the original PRM design so .ntq-formula
+    renders fully, not just the container)
+===================================================== */
+
+.ntq-formula-label{
+
+    font-size:var(--fs-sm);
+
+    color:var(--text-dim);
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+
+}
+
+.ntq-formula-eq{
+
+    font-family:var(--font-serif);
+
+    font-size:var(--fs-xl);
+
+    font-style:italic;
+
+    color:var(--accent);
+
+}
+
+.ntq-formula-expand{
+
+    font-size:var(--fs-sm);
+
+    color:var(--text-dim);
+
+}
+
+.ntq-formula-values{
+
+    margin-left:auto;
+
+    display:flex;
+
+    gap:var(--space-6);
+
+}
+
+.ntq-fval{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:2px;
+
+}
+
+.ntq-fval-num{
+
+    font-family:var(--font-serif);
+
+    font-size:var(--fs-lg);
+
+    font-weight:var(--fw-medium);
+
+    color:var(--accent-3);
+
+}
+
+.ntq-fval-label{
+
+    font-size:var(--fs-xs);
+
+    color:var(--text-dimmer);
+
+    letter-spacing:1px;
+
+}
+
+/* =====================================================
+   CONTENT — heading / text
+===================================================== */
+
+.ntq-heading{
+
+    font-family:var(--font-serif);
+
+    font-weight:var(--fw-light);
+
+    color:var(--text);
+
+    margin-bottom:var(--space-3);
+
+    letter-spacing:-.5px;
+
+}
+
+.ntq-text{
+
+    color:var(--text-dim);
+
+    font-size:var(--fs-md);
+
+    line-height:1.7;
+
+    margin-bottom:var(--space-3);
+
+}
