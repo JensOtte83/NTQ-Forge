@@ -153,6 +153,29 @@ semantischer Structure und ihrer jeweiligen Manifestation.
 
 ---
 
+# Rekonstruktionsnotiz
+
+Diese Analyse entstand nicht durch Ableitung aus GSRP allein.
+
+Sie entstand durch wiederholte Rekonstruktion der Forge,
+den Vergleich mit anderen Projekten
+(PRM-Tool, GemmaAndroid, ModelService)
+sowie durch sukzessive Stabilisierung
+der beobachteten Entwurfsgrammatik.
+
+Die Analyse beschreibt daher nicht nur Forge.
+
+Sie dokumentiert gleichzeitig
+den Rekonstruktionsprozess des Beobachters.
+
+Status:
+
+vorläufig stabilisiert
+
+ε vorhanden
+
+---
+
 # Vorläufiges Zwischenfazit
 
 Forge erscheint weniger als Dokumentgenerator,
