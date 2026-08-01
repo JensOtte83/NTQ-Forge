@@ -9,7 +9,9 @@ Public API
     from ntqforge import Forge, Document, Theme
     from ntqforge import Panel, FormulaBar, Grid, Heading, Text, Raw
 """
-
+from .layer import Layer
+from .stack import Stack
+from .network import Network
 from .document import Document
 from .theme import Theme
 from .renderer import Renderer
@@ -40,6 +42,9 @@ __version__ = "0.1.0"
 
 __all__ = [
     "Forge",
+    "Layer",
+    "Stack",
+    "Network",
     "Document",
     "Theme",
     "Renderer",
